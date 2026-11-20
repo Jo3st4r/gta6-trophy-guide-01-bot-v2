@@ -1,0 +1,203 @@
+/* Platinum Road — Vice City neon sunset, all original: no Rockstar artwork, no game fonts. */
+:root {
+  --ink: #f4eef7;
+  --muted: #b9a8c9;
+  --bg: #120e26;
+  --panel: #1c1538;
+  --panel-2: #241b45;
+  --line: #3a2d63;
+  --pink: #ff2e88;
+  --cyan: #22d3ee;
+  --orange: #ff9f1c;
+  --gold: #f5c542;
+  --silver: #c9d1d9;
+  --bronze: #e0955a;
+  --platinum: #8fd8ff;
+  --good: #34d399;
+  --danger: #ff5d5d;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.hero {
+  padding: 28px 24px 22px;
+  background:
+    linear-gradient(180deg, rgba(18, 14, 38, 0.15), rgba(18, 14, 38, 0.92)),
+    linear-gradient(100deg, #ff2e88 0%, #ff7a18 45%, #ff9f1c 65%, #22d3ee 100%);
+  border-bottom: 3px solid var(--pink);
+}
+.kicker {
+  margin: 0 0 4px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #ffe9f3;
+}
+.hero h1 {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+.tagline { margin: 8px 0 0; font-size: 18px; color: #fff; max-width: 720px; }
+.progress { margin-top: 16px; max-width: 560px; }
+.progress-bar {
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+.progress-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--cyan), var(--pink));
+  transition: width 0.25s ease;
+}
+.progress p { margin: 6px 0 0; font-weight: 700; }
+.honesty {
+  margin: 14px 0 0;
+  max-width: 760px;
+  font-size: 13px;
+  color: #ffe9f3;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.tabs { display: flex; gap: 8px; padding: 14px 24px 0; }
+.tab {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.tab.active { background: var(--pink); border-color: var(--pink); font-weight: 700; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  padding: 16px 24px;
+}
+.controls label { font-size: 14px; color: var(--muted); }
+.controls input[type="search"],
+.controls select {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 14px;
+}
+.controls input[type="search"] { width: 240px; }
+.controls .check { color: var(--ink); }
+.controls button, .importBtn {
+  background: var(--cyan);
+  color: #06222b;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 13px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.importBtn input { display: none; }
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr);
+  gap: 20px;
+  padding: 0 24px 24px;
+  align-items: start;
+}
+.count { color: var(--muted); margin: 0 0 10px; font-size: 14px; }
+.trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.trophy {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+.trophy:hover { border-color: var(--pink); }
+.trophy.selected { border-color: var(--cyan); box-shadow: 0 0 0 1px var(--cyan); }
+.trophy.earned { border-color: var(--good); }
+.trophy-top { display: flex; gap: 10px; align-items: flex-start; }
+.trophy-top input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--good); flex: none; }
+.trophy-name { font-size: 17px; font-weight: 700; margin: 0; }
+.trophy-desc { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+.badge.platinum { background: #123; color: var(--platinum); border: 1px solid var(--platinum); }
+.badge.gold { background: #33270a; color: var(--gold); border: 1px solid var(--gold); }
+.badge.silver { background: #262a33; color: var(--silver); border: 1px solid var(--silver); }
+.badge.bronze { background: #331a0e; color: var(--bronze); border: 1px solid var(--bronze); }
+.badge.missable { background: #3d0a1e; color: #ff8fb8; border: 1px solid var(--danger); }
+.badge.oneshot { background: #3d2a05; color: var(--orange); border: 1px solid var(--orange); }
+.badge.kind { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.trophy-guide { margin: 8px 0 0; font-size: 14px; }
+.trophy-guide .src { color: var(--muted); font-size: 12px; }
+
+.detail {
+  position: sticky;
+  top: 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+.detail h2 { margin: 0 0 4px; font-size: 22px; }
+.detail .official { color: var(--muted); font-style: italic; margin: 0 0 10px; }
+.detail h3 { margin: 14px 0 4px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cyan); }
+.detail p { margin: 0 0 8px; }
+.detail ul { margin: 0; padding-left: 18px; }
+.detail a { color: var(--cyan); }
+.detail .empty { color: var(--muted); }
+
+.roadmap-intro { padding: 0 24px; color: var(--muted); max-width: 760px; }
+#viewRoadmap h2 { padding: 0 24px; }
+.roadmap { list-style: none; margin: 0; padding: 0 24px 24px; display: grid; gap: 14px; }
+.phase {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--pink);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.phase h3 { margin: 0 0 4px; font-size: 19px; }
+.phase .goal { margin: 0 0 6px; color: var(--orange); font-weight: 700; }
+.phase p { margin: 0 0 6px; }
+.phase .tip { color: var(--muted); font-size: 14px; }
+.phase .phase-trophies { color: var(--muted); font-size: 13px; }
+
+footer { padding: 8px 24px 32px; color: var(--muted); border-top: 1px solid var(--line); }
+footer h2 { color: var(--ink); font-size: 18px; }
+footer .sources { padding-left: 18px; }
+footer .sources a { color: var(--cyan); }
+footer .fineprint { font-size: 13px; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .detail { position: static; }
+  .hero h1 { font-size: 34px; }
+}

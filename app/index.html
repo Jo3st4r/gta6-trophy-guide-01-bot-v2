@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platinum Road — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="kicker">Grand Theft Auto VI · PlayStation 5</p>
+  <h1>Platinum Road</h1>
+  <p class="tagline">55 trophies, 9 one-shots, 1 missable: hunt every one-shot before Chapter 1 locks it.</p>
+  <div class="progress" role="status">
+    <div class="progress-bar"><span id="progressFill"></span></div>
+    <p id="progressText">0 of 55 earned · 0%</p>
+  </div>
+  <p class="honesty" id="honestyNote"></p>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button id="tabGuide" type="button" class="tab active" aria-selected="true">Guide &amp; tracker</button>
+  <button id="tabRoadmap" type="button" class="tab" aria-selected="false">Roadmap to platinum</button>
+</nav>
+
+<section id="viewGuide" aria-label="Trophy guide">
+  <div class="controls">
+    <label class="search">Search <input id="search" type="search" placeholder="Trophy name, mission, keyword…" autocomplete="off"></label>
+    <label>Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Kind
+      <select id="kindFilter">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectible">Collectibles</option>
+        <option value="activity">Activities</option>
+        <option value="side">Strangers &amp; side</option>
+        <option value="heist">Heists</option>
+        <option value="secret">Secret</option>
+        <option value="completion">Completion</option>
+        <option value="platinum">Platinum</option>
+      </select>
+    </label>
+    <label>Show
+      <select id="earnedFilter">
+        <option value="all">All trophies</option>
+        <option value="earned">Earned only</option>
+        <option value="unearned">Not earned yet</option>
+      </select>
+    </label>
+    <label class="check"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
+    <button id="exportBtn" type="button">Export progress</button>
+    <label class="importBtn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+  </div>
+
+  <div class="layout">
+    <div>
+      <p id="countLine" class="count"></p>
+      <ul id="trophyList" class="trophy-list"></ul>
+    </div>
+    <aside id="detail" class="detail" aria-label="Selected trophy"></aside>
+  </div>
+</section>
+
+<section id="viewRoadmap" aria-label="Roadmap to the platinum" hidden>
+  <h2 id="roadmapTitle">Roadmap to the platinum</h2>
+  <p id="roadmapIntro" class="roadmap-intro"></p>
+  <ol id="roadmapList" class="roadmap"></ol>
+</section>
+
+<footer>
+  <h2>Sources &amp; honesty</h2>
+  <p>The trophy names, descriptions and grades in this guide are the list reported in agreement by multiple outlets on 18 November 2026. Rockstar and PlayStation had not published an official trophy list when this guide was built (20 November 2026), and the PSNProfiles community has called the circulating named list “probably fake” — only the count of 55 traces to a dataminer claim. Treat every name, grade and guide step here as <strong>reported, not confirmed</strong>: verify against your console’s trophy list at launch.</p>
+  <ul id="sourceList" class="sources"></ul>
+  <p class="fineprint">Platinum Road is an unofficial fan guide. It uses no Rockstar Games logo, official artwork, box art or screenshot of the game. All guide text is written for this entry; sources are cited, never copied.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
